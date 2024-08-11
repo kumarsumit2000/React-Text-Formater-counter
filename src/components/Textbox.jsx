@@ -42,16 +42,18 @@ function Textchange(event){
   setText(event.target.value)
 }
   return (
+    <>
     <div className='container'>
     <h1 className="m-3">{Inputboxhead}</h1>
     <div className="mb-3">
     <textarea className="form-control" value={Text} onChange={Textchange} placeholder="Enter Your Text Here....." id="exampleFormControlTextarea1" rows="10"></textarea>
     </div>
-    <div className="m-3">{Text.length} Word & {Text.trim().split(/\s+/).length} Charactor</div>
+    <div className="m-3">{Text.length} Word & {Text == "" ? 0 : Text.trim().split(/\s+/).length} Charactor</div>
     <button className="bg-primarybtn btn-primary m-3" onClick={toUppercase}>To Uppercase</button>
     <button className="bg-primarybtn btn-primary m-3" onClick={toLowercase}>To Lowercase</button>
     <button className="bg-primarybtn btn-primary m-3" onClick={toCapital}>To Capitalize</button>
     </div>
+    </>
   )
 }
 
